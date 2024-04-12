@@ -3,7 +3,10 @@ const compras = Vue.createApp({
     data(){
         return {
             producto: 'azucar',
-            lista: ['Peras', 'Bananas', 'Manzanas'],
+            lista: [
+                { precio: 400, producto: 'Pera'},
+                { precio: 500, producto: 'Banana'}
+            ],
             total: 500
         }
     },
