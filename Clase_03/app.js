@@ -10,6 +10,29 @@ const compras = Vue.createApp({
     },
     // Métodos
     methods: {
+        // ASYNC AWAIT
+        async getJSON(){
+            const ruta = 'data.json';
+            const resp = await fetch(ruta);
+            const json = await resp.json();
+            this.lista = json.data;
+            console.log(this.lista)
+        },
+/*         getJSON(){
+
+            const ruta = 'data.json';
+            fetch( ruta)
+            .then( resp => {
+                return resp.json();
+            }).then( json => {
+                console.log(json)
+                this.lista = json.data;
+                this.calcularTotal();
+            }).catch( error =>{
+                console.error(error);
+                alert('Upss tenemos un error')
+            })
+        }, */
         agregar(){
             this.lista.push({
                 precio: this.precio,

@@ -34,10 +34,11 @@
                 <h4>Cantidad {{ lista.length }} </h4>
             </div>
             <div class="col-sm-12 col-md-6">
+                <button v-on:click="getJSON" type="button" class="btn btn-primary"> GET JSON</button>
                 <ul class="list-group mt-4">
                     <li v-for="(item, index) in lista" class="list-group-item d-flex justify-content-between">
                         <span>
-                            ${{ item.precio }} | {{ item.producto }}  
+                            ${{ item.precio }} | {{ item.nombre }}  
                         </span>
                         <i v-on:click="eliminar(index)" class="fa-solid fa-trash-can text-danger"></i>
                     </li>

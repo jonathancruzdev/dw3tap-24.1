@@ -1,0 +1,8 @@
+{
+    "data": [
+        { "id": 1, "nombre": "Manzana", "precio": 530 },
+        { "id": 2, "nombre": "Pera", "precio": 700 },
+        { "id": 3, "nombre": "Sandia", "precio": 2500 },
+        { "id": 4, "nombre": "Uva", "precio": 300 }
+    ]
+}
