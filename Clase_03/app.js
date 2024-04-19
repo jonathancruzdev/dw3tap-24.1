@@ -2,20 +2,33 @@ const compras = Vue.createApp({
     // El modelo de Datos
     data(){
         return {
-            producto: 'azucar',
-            lista: [
-                { precio: 400, producto: 'Pera'},
-                { precio: 500, producto: 'Banana'}
-            ],
-            total: 500
+            producto: '',
+            precio: '',
+            lista: [],
+            total: 0
         }
     },
     // Métodos
     methods: {
         agregar(){
-            console.log('Agregando Producto');
-            this.lista.push( this.producto);
+            this.lista.push({
+                precio: this.precio,
+                producto: this.producto
+            });
             this.producto = '';
+            this.precio = '';
+            this.calcularTotal();
+        },
+        eliminar(index){
+            console.log('eliminando' , index);
+            this.lista.splice(index, 1);
+            this.calcularTotal();
+        },
+        calcularTotal(){
+            this.total = 0;
+            this.lista.forEach(producto => {
+            this.total += producto.precio;
+            });
         }
     }
 
