@@ -1,0 +1,9 @@
+{
+    "data": [
+        { "id": 1, "nombre": "Maquetado" },
+        { "id": 2, "nombre": "JavaScript" },
+        { "id": 3, "nombre": "VueJS" },
+        { "id": 4, "nombre": "Bootstrap" },
+        { "id": 5, "nombre": "React" }
+    ]
+}

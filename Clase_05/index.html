@@ -17,19 +17,22 @@
     <main id="app" class="container">
         <div class="row mt-4">
             <div class="col-md-5">
-                <form class="card p-3">
+                <form v-on:submit.prevent="inscribirse" action="" class="card p-3">
                     <label for="">Nombre</label>
-                    <input type="text" class="form-control">
+                    <input v-model="nombre" type="text" class="form-control">
 
                     <label for="">Apellido</label>
-                    <input type="text" class="form-control">
+                    <input v-model="apellido" type="text" class="form-control">
 
                     <label for="">Email</label>
-                    <input type="email" class="form-control">
+                    <input v-model="email" type="email" class="form-control">
 
                     <label for="">Curso</label>
-                    <select class="form-control">
-                        <option value="1">Maquetado</option>
+                    <select v-model="cursoId" class="form-control">
+                        <option 
+                            v-for="(curso, index) in cursos" 
+                            v-bind:value="curso.id"> {{ curso.nombre}}
+                        </option>
                     </select>
 
                     <button class="btn btn-success mt-3" type="submit">Inscribirse</button>
@@ -38,12 +41,12 @@
             <div class="col-md-5">
                 <h2>Inscripciones</h2>
                 <ol class="list-group list-group-numbered">
-                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <li v-for="(item, index) in inscripciones" class="list-group-item d-flex justify-content-between align-items-start">
                         <div class="ms-2 me-auto">
-                            <div class="fw-bold">Juan Perez</div>
+                            <div class="fw-bold">{{ item.nombre}}</div>
                             26/04/24 16:29
                             </div>
-                        <span class="badge text-bg-primary rounded-pill">Maquetado</span>
+                        <span class="badge text-bg-primary rounded-pill">{{ obtenerCurso( item.cursoId ) }}</span>
                     </li>
 
                 </ol>
