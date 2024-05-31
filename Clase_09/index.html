@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
 
-    <script src="components/card.js"></script>
-
+    <script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js" defer></script>
+    
+    <script src="views/Contactos.js"></script>
+    
     <script src="app.js" defer></script>
 </head>
 <body>
@@ -18,7 +20,19 @@
         <h1> Vue Router</h1>
     </header>
     <main id="app" class="container">
+        <h2> {{ titulo }}</h2>
 
+        <nav>
+            <ul>
+                <li><router-link to="/"> Home </router-link></li>
+                <li><router-link to="/dos"> Pantalla dos</router-link></li>
+                <li><router-link to="/tres"> Pantalla tres</router-link></li>
+                <li><router-link to="/contactos"> Contactos</router-link></li>
+
+            </ul>
+        </nav>
+
+        <router-view></router-view>
 
     </main>
     <footer class="bg-dark text-white">
