@@ -8,6 +8,11 @@ Para usar Vutify en un proyecto existente
 npm i vuetify
 ```
 
+Instalar Iconos
+``` sh
+npm install @mdi/font -D
+````
+
 ### Compile and Hot-Reload for Development
 
 ```sh
